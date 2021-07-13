@@ -1,0 +1,9 @@
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\bin\Release\CSpk_BootGUI.exe.config
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\bin\Release\CSpk_BootGUI.exe
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\bin\Release\CSpk_BootGUI.pdb
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\obj\Release\CSpk_BootGUI.csprojResolveAssemblyReference.cache
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\obj\Release\CSpk_BootGUI.Form1.resources
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\obj\Release\CSpk_BootGUI.Properties.Resources.resources
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\obj\Release\CSpk_BootGUI.csproj.GenerateResource.Cache
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\obj\Release\CSpk_BootGUI.exe
+E:\C#_project\source\1 JUN 2021_src\1 JUN 2021\CSpk_BootGUI\obj\Release\CSpk_BootGUI.pdb

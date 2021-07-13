@@ -1,0 +1,45 @@
+CSpk_BootGUI
+程序分界面、设备检测和升级三个部分。
+界面包含设备串口(如果有)、升级选项及升级按扭、升级状态三个部分。
+设备检测是程序一开始就运行的任务，主要用来检测设备是否存在，并影响界面的显示。
+升级分Mcu升级、蓝牙升级、flash升级三个部分。
+
+升级流程：
+设备检测时设备是否有串口，如果没检测到相应的串口设备，说明设备只存在蓝牙设备，此时串口号的选择功能也是灰色，对应的
+的Mcu升级功能和Flash功能也是灰色，只能选择升级蓝牙.
+检测到相应的串口设备，通过串口通讯来获取版本号,来确定升级文件名，并进行相应的升级。如果Mcu为空，则无法获取版本号需要
+UpdateFile.ini（工厂升级时需要）文件来选择升级文件。
+
+串口通讯格式：
+cmd(命令1byte)+dmc(命令取反1byte)+CRC(校验码2byte)+len(长度4byte)+addr(地址4byte)+sum(帧头检验码4byte)+per(百分比4byte，用来表示当前文件传输了多少)+data(你要传输的数据)
+crc = GetCrc16(data, len);
+sum = cmd + crc + len + addr + per;
+
+界面相关函数及变量：
+comboBox_Serial_DropDown(设备串口选择)
+button_Update_Click(升级按扭点击处理)
+checkBox_McuUpdate_CheckedChanged(Mcu升级选项)
+checkBox_FlashUpdate_CheckedChanged(Flash升级选项)
+checkBox_BluetoothUpdate_CheckedChanged(蓝牙升级选项)
+Form1_FormClosing(窗口关闭处理)
+Form1_Load(窗口入口，在这里启动设备检测功能)
+
+设备检测相关函数及变量：
+timer_UpdateDeviceScan_Tick(定时器事件，用来重复调用设备检测功能)
+USB_Scan(设备检测)
+
+
+升级相关函数及变量：
+UpdateMcu(Mcu升级处理)
+UpdateFlash(flash升级处理)
+UpdateBluetooth(蓝牙升级处理)
+SelectUpdateFileName(获取设备升级文件名)
+
+string UpdateFileNameMcu = "";//存储蓝牙升级文件名
+string UpdateFileNameFlash = "";//存储flash升级文件名
+string UpdateFileNameBT= "";//存储蓝牙升级文件名
+
+CSpk_BootGUI_Updating;//是否处于升级中
+BTUsbDeviceOnlyExist；//DS16只有蓝牙，
+SerialDeviceExist；//设备存在串口
+

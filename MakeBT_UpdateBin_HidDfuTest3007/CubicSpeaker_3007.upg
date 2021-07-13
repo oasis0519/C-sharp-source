@@ -1,0 +1,21 @@
+device_variant QC3007
+# Set the upgrade version and previous version(s)
+# that are compatible to upgrade from. The minor
+# version can be '*' to act as a wildcard.
+upgrade_version 2.1
+compatible_upgrade 1.*
+compatible_upgrade 2.*
+# Set the ps config version and previous version(s)
+# that are compatible to upgrade from (hex values)
+ps_config_version 2
+ps_prev_config_version 0
+ps_prev_config_version 1
+
+# Filesystem containing audio prompts
+#1 3 audio_prompts.xuv
+
+# Filesystem containing application and related data
+2 0 qcc3007.xuv
+
+# pskey files update
+#3 2 sink_system_qcc300x.xuv
